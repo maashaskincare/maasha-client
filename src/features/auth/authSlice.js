@@ -26,7 +26,13 @@ export const loadUser = createAsyncThunk('auth/loadUser', async (_, { rejectWith
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: { user: null, token: localStorage.getItem('maasha_token') || null, loading: false, error: null, isAdmin: false },
+  initialState: {
+    user: null,
+    token: localStorage.getItem('maasha_token') || null,
+    loading: false,
+    error: null,
+    isAdmin: false,
+  },
   reducers: {
     logout(state) {
       state.user = null; state.token = null; state.isAdmin = false
@@ -36,14 +42,39 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      // ── Login ──
       .addCase(loginUser.pending,   (s) => { s.loading = true; s.error = null })
-      .addCase(loginUser.fulfilled, (s, a) => { s.loading = false; s.user = a.payload.user; s.token = a.payload.token; s.isAdmin = a.payload.user?.role === 'admin' })
+      .addCase(loginUser.fulfilled, (s, a) => {
+        s.loading = false
+        // Backend returns user fields directly + token (not nested in user:{})
+        const { token, ...userData } = a.payload
+        s.token   = token
+        s.user    = userData
+        s.isAdmin = userData.role === 'admin'
+      })
       .addCase(loginUser.rejected,  (s, a) => { s.loading = false; s.error = a.payload })
+
+      // ── Register ──
       .addCase(registerUser.pending,   (s) => { s.loading = true; s.error = null })
-      .addCase(registerUser.fulfilled, (s, a) => { s.loading = false; s.user = a.payload.user; s.token = a.payload.token; s.isAdmin = a.payload.user?.role === 'admin' })
+      .addCase(registerUser.fulfilled, (s, a) => {
+        s.loading = false
+        const { token, ...userData } = a.payload
+        s.token   = token
+        s.user    = userData
+        s.isAdmin = userData.role === 'admin'
+      })
       .addCase(registerUser.rejected,  (s, a) => { s.loading = false; s.error = a.payload })
-      .addCase(loadUser.fulfilled, (s, a) => { s.user = a.payload; s.isAdmin = a.payload?.role === 'admin' })
-      .addCase(loadUser.rejected,  (s) => { s.user = null; s.token = null; localStorage.removeItem('maasha_token') })
+
+      // ── Load user (profile returns user object directly) ──
+      .addCase(loadUser.fulfilled, (s, a) => {
+        s.user    = a.payload
+        s.isAdmin = a.payload?.role === 'admin'
+      })
+      .addCase(loadUser.rejected, (s) => {
+        s.user  = null
+        s.token = null
+        localStorage.removeItem('maasha_token')
+      })
   },
 })
 

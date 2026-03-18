@@ -6,13 +6,5 @@ export default defineConfig({
   server: { port: 5173 },
   build: {
     outDir: 'dist',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          redux:  ['@reduxjs/toolkit', 'react-redux'],
-        },
-      },
-    },
   },
 })
