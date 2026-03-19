@@ -66,7 +66,7 @@ export default function Products() {
                   <td className="px-4 py-3"><span className={`badge text-[10px] ${p.status==='published'?'bg-green-100 text-green-700':p.status==='draft'?'bg-yellow-100 text-yellow-700':'bg-gray-100 text-gray-500'}`}>{p.status}</span></td>
                   <td className="px-4 py-3">
                     <div className="flex gap-2">
-                      <Link to={`/admin/products/${p._id}`} className="text-xs text-blue-500 hover:text-blue-600 font-semibold">Edit</Link>
+                      <Link to={`/admin/products/${p._id}`} state={{ product: p }} className="text-xs text-blue-500 hover:text-blue-600 font-semibold">Edit</Link>
                       <button onClick={() => handleDelete(p._id,p.name)} disabled={deleting===p._id} className="text-xs text-red-400 hover:text-red-500 font-semibold">{deleting===p._id?'…':'Delete'}</button>
                     </div>
                   </td>

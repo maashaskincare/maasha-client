@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { productAPI, categoryAPI, uploadAPI } from '../../api/services'
 import { SKIN_TYPES } from '../../constants'
 import toast from 'react-hot-toast'
 
 export default function AddProduct({ editMode = false }) {
   const navigate = useNavigate()
-  const { id }   = useParams()
-  const [loading,    setLoading]    = useState(editMode)
+  const { id }      = useParams()
+  const { state }   = useLocation()
+  const [loading,    setLoading]    = useState(false)
   const [saving,     setSaving]     = useState(false)
   const [categories, setCategories] = useState([])
   const [uploading,  setUploading]  = useState(false)
@@ -21,20 +22,18 @@ export default function AddProduct({ editMode = false }) {
   useEffect(() => {
     categoryAPI.getAll().then(r => setCategories(r.data?.categories||r.data||[]))
     if (!editMode || !id) return
-    productAPI.adminGetAll().then(r => {
-      const products = r.data?.products||r.data||[]
-      const p = products.find(x => x._id === id)
-      if (!p) { toast.error('Product not found'); navigate('/admin/products'); return }
-      setForm({
-        name:p.name||'', slug:p.slug||'', shortDescription:p.shortDescription||'', description:p.description||'',
-        ingredients:(p.ingredients||[]).join(', '), howToUse:p.howToUse||'',
-        category:p.category?._id||p.category||'', price:p.price||'', comparePrice:p.comparePrice||'',
-        sku:p.sku||'', stock:p.stock||'', skinTypes:p.skinTypes||[], tags:(p.tags||[]).join(', '),
-        featured:p.featured||false, bestSeller:p.bestSeller||false, status:p.status||'published',
-        images:p.images||[], seoTitle:p.seoTitle||'', seoDescription:p.seoDescription||'', seoKeywords:p.seoKeywords||'',
-      })
-      setLoading(false)
-    }).catch(() => setLoading(false))
+    const p = state?.product
+    if (!p) { toast.error('Product not found'); navigate('/admin/products'); return }
+    const ingredientsVal = Array.isArray(p.ingredients) ? p.ingredients.join(', ') : p.ingredients||''
+    const tagsVal = Array.isArray(p.tags) ? p.tags.join(', ') : p.tags||''
+    setForm({
+      name:p.name||'', slug:p.slug||'', shortDescription:p.shortDescription||'', description:p.description||'',
+      ingredients:ingredientsVal, howToUse:p.howToUse||'',
+      category:p.category?._id||p.category||'', price:p.price||'', comparePrice:p.comparePrice||'',
+      sku:p.sku||'', stock:p.stock||'', skinTypes:p.skinTypes||[], tags:tagsVal,
+      featured:p.featured||false, bestSeller:p.bestSeller||false, status:p.status||'published',
+      images:p.images||[], seoTitle:p.seoTitle||'', seoDescription:p.seoDescription||'', seoKeywords:p.seoKeywords||'',
+    })
   }, [editMode, id])
 
   const handleNameChange = (val) => {
