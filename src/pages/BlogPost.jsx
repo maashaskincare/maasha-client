@@ -20,7 +20,7 @@ export default function BlogPost() {
       .then(r => {
         const p = r.data?.blog || r.data
         setPost(p)
-        blogAPI.getAll({ category: p.category, limit: 3 })
+        blogAPI.getAll({ category: p.category?.name || p.category, limit: 3 })
           .then(res => setRelated((res.data?.blogs||res.data||[]).filter(b => b.slug !== slug).slice(0,3)))
       })
       .catch(() => navigate('/blog'))
@@ -89,11 +89,11 @@ export default function BlogPost() {
             <nav className="text-xs text-gray-400 mb-5 flex flex-wrap gap-1">
               <Link to="/" className="hover:text-green-500">Home</Link> <span>/</span>
               <Link to="/blog" className="hover:text-green-500">Blog</Link> <span>/</span>
-              {post.category && <><Link to={`/blog?category=${post.category}`} className="hover:text-green-500">{post.category}</Link><span>/</span></>}
+              {post.category && <><Link to={`/blog?category=${typeof post.category === 'object' ? post.category.name : post.category}`} className="hover:text-green-500">{typeof post.category === 'object' ? post.category.name : post.category}</Link><span>/</span></>}
               <span className="text-charcoal line-clamp-1">{post.title}</span>
             </nav>
             <header className="mb-8">
-              {post.category && <Link to={`/blog?category=${post.category}`} className="inline-block badge-green text-xs mb-3">{post.category}</Link>}
+              {post.category && <Link to={`/blog?category=${typeof post.category === 'object' ? post.category.name : post.category}`} className="inline-block badge-green text-xs mb-3">{typeof post.category === 'object' ? post.category.name : post.category}</Link>}
               <h1 className="text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-4" style={{fontFamily:'var(--font-heading)'}}>{post.title}</h1>
               <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400">
                 <span>By <strong className="text-charcoal">{post.author || 'Maasha Skin Care'}</strong></span>
