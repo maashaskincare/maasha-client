@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { orderAPI } from '../../api/services'
+import generateInvoice from '../../utils/generateInvoice'
 import { ORDER_STATUSES } from '../../constants'
 import toast from 'react-hot-toast'
 
@@ -46,7 +47,10 @@ export default function OrderDetail() {
           <button onClick={() => navigate('/admin/orders')} className="text-xs text-gray-400 hover:text-green-500 mb-1 flex items-center gap-1">← Back to Orders</button>
           <h1 className="text-xl font-bold text-charcoal" style={{fontFamily:'var(--font-heading)'}}>Order #{order.orderNumber}</h1>
         </div>
-        <span className={`badge ${st?.color}`}>{order.status}</span>
+        <div className="flex items-center gap-3">
+          <span className={`badge ${st?.color}`}>{order.status}</span>
+          <button onClick={() => generateInvoice(order)} className="btn-primary btn-sm text-xs flex items-center gap-1">📄 Download Invoice</button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
