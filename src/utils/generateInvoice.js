@@ -1,5 +1,5 @@
-import jsPDF from 'jspdf'
-import 'jspdf-autotable'
+import { jsPDF } from 'jspdf'
+import autoTable from 'jspdf-autotable'
 
 export default function generateInvoice(order) {
   const doc = new jsPDF()
@@ -111,7 +111,7 @@ export default function generateInvoice(order) {
   doc.text('ORDER ITEMS', 15, y)
 
   y = 128
-  doc.autoTable({
+  autoTable(doc, {
     startY: y,
     head: [['#', 'Product', 'Qty', 'Unit Price', 'Total']],
     body: (order.items || []).map((item, i) => [
@@ -150,7 +150,7 @@ export default function generateInvoice(order) {
   }
   totalsData.push(['Shipping', order.shipping === 0 ? 'FREE' : `Rs.${order.shipping}`])
 
-  doc.autoTable({
+  autoTable(doc, {
     startY: finalY,
     body: totalsData,
     bodyStyles: { fontSize: 8, textColor: GRAY },
