@@ -164,11 +164,11 @@ export default function generateInvoice(order) {
 
   const totalY = doc.lastAutoTable.finalY + 4
   doc.setFillColor(...GREEN)
-  doc.roundedRect(totalsX - 5, totalY, 65, 14, 2, 2, 'F')
+  doc.roundedRect(totalsX - 15, totalY, 75, 14, 2, 2, 'F')
   doc.setFont('helvetica', 'bold')
   doc.setTextColor(...WHITE)
   doc.setFontSize(9)
-  doc.text('TOTAL', totalsX, totalY + 9)
+  doc.text('TOTAL', totalsX - 10, totalY + 9)
   doc.setFontSize(11)
   doc.text(`Rs.${order.total?.toLocaleString('en-IN')}`, pageW - 17, totalY + 9, { align: 'right' })
 
