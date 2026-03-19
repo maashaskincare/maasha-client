@@ -139,7 +139,7 @@ export default function ProductDetail() {
             {product.ingredients && (
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Key Ingredients</p>
-                <div className="flex flex-wrap gap-2">{product.ingredients.map(ing => <span key={ing} className="badge-green text-xs">{ing}</span>)}</div>
+                <div className="flex flex-wrap gap-2">{(Array.isArray(product.ingredients) ? product.ingredients : (product.ingredients||'').split(',').map(s=>s.trim())).filter(Boolean).map(ing => <span key={ing} className="badge-green text-xs">{ing}</span>)}</div>
               </div>
             )}
             {product.skinTypes?.length > 0 && (
