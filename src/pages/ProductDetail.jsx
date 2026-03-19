@@ -85,7 +85,7 @@ export default function ProductDetail() {
     <>
       <SEO
         title={`${product.name} — Buy Online India`}
-        description={`Buy ${product.name} online in India. ${product.shortDescription||''} Key ingredients: ${product.ingredients?.join(', ')||''}. Ships pan-India from Bhopal.`}
+        description={`Buy ${product.name} online in India. ${product.shortDescription||''} Key ingredients: ${Array.isArray(product.ingredients) ? product.ingredients.join(', ') : product.ingredients||''}. Ships pan-India from Bhopal.`}
         keywords={`buy ${product.name} india, ${product.name} price, ${product.category?.name||''} india, maasha skin care`}
         canonical={`/product/${product.slug}`}
         image={product.images?.[0]?.url}
@@ -136,7 +136,7 @@ export default function ProductDetail() {
               {product.comparePrice && <><span className="text-lg text-gray-400 line-through">₹{product.comparePrice}</span><span className="badge-red text-sm font-bold px-3 py-1">{discount}% OFF</span></>}
             </div>
             <p className="text-xs text-gray-400">Inclusive of all taxes · Free shipping above ₹499</p>
-            {product.ingredients?.length > 0 && (
+            {product.ingredients && (
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Key Ingredients</p>
                 <div className="flex flex-wrap gap-2">{product.ingredients.map(ing => <span key={ing} className="badge-green text-xs">{ing}</span>)}</div>
@@ -184,7 +184,7 @@ export default function ProductDetail() {
               <div>
                 <h2 className="text-lg font-bold text-charcoal mb-4" style={{fontFamily:'var(--font-heading)'}}>Active Ingredients</h2>
                 <div className="space-y-3">
-                  {(product.ingredients||[]).map(ing => (
+                  {(Array.isArray(product.ingredients) ? product.ingredients : (product.ingredients||'').split(',').map(s=>s.trim())).map(ing => (
                     <div key={ing} className="flex items-start gap-3 p-4 rounded-xl bg-green-50">
                       <span className="text-green-500 text-lg flex-shrink-0">🌿</span>
                       <div><p className="font-semibold text-charcoal text-sm">{ing}</p><p className="text-xs text-gray-500 mt-0.5">Natural active ingredient</p></div>
