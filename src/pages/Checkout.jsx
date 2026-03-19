@@ -58,12 +58,12 @@ export default function Checkout() {
         return
       }
       const options = {
-        key: RAZORPAY_KEY,
-        amount: data.razorpayOrder.amount,
+        key: data.razorpayKeyId || RAZORPAY_KEY,
+        amount: data.order.total * 100,
         currency: 'INR',
         name: BRAND.name,
         description: 'Maasha Skin Care Order',
-        order_id: data.razorpayOrder.id,
+        order_id: data.razorpayOrderId,
         prefill: { name: address.fullName, email: address.email, contact: address.phone },
         theme: { color: '#2D5A27' },
         handler: async (response) => {
