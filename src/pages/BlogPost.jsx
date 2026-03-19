@@ -69,7 +69,7 @@ export default function BlogPost() {
       <SEO
         title={post.seoTitle || post.title}
         description={post.seoDescription || post.excerpt}
-        keywords={post.seoKeywords || post.tags?.join(', ')}
+        keywords={post.seoKeywords || Array.isArray(post.tags) ? post.tags.join(', ') : post.tags||''}
         canonical={`/blog/${post.slug}`}
         image={post.featuredImage}
         type="article"
@@ -124,10 +124,10 @@ export default function BlogPost() {
               className="prose prose-base max-w-none text-gray-700 leading-relaxed prose-headings:font-heading prose-headings:text-charcoal prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:font-semibold prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-4 prose-a:text-green-600 prose-a:font-medium prose-img:rounded-xl prose-img:my-6 prose-strong:text-charcoal"
               dangerouslySetInnerHTML={{ __html: post.content || '<p>Content coming soon.</p>' }}
             />
-            {post.tags?.length > 0 && (
+            {(Array.isArray(post.tags) ? post.tags.length > 0 : !!post.tags) && (
               <div className="mt-8 pt-6 border-t border-gray-100 flex flex-wrap gap-2">
                 <span className="text-xs font-semibold text-gray-400 mr-1">Tags:</span>
-                {post.tags.map(tag => (
+                {(Array.isArray(post.tags) ? post.tags : (post.tags||'').split(',').map(s=>s.trim())).filter(Boolean).map(tag => (
                   <Link key={tag} to={`/search?q=${tag}`} className="badge-green text-xs hover:bg-green-100 transition-colors">#{tag}</Link>
                 ))}
               </div>
