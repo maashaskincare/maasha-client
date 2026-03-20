@@ -96,7 +96,7 @@ export default function BlogPost() {
               {post.category && <Link to={`/blog?category=${typeof post.category === 'object' ? post.category.name : post.category}`} className="inline-block badge-green text-xs mb-3">{typeof post.category === 'object' ? post.category.name : post.category}</Link>}
               <h1 className="text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-4" style={{fontFamily:'var(--font-heading)'}}>{post.title}</h1>
               <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400">
-                <span>By <strong className="text-charcoal">{post.author || 'Maasha Skin Care'}</strong></span>
+                <span>By <strong className="text-charcoal">{typeof post.author === 'object' ? post.author?.name || 'Maasha Skin Care' : post.author || 'Maasha Skin Care'}</strong></span>
                 <span>·</span>
                 <span>{new Date(post.publishedAt).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</span>
                 <span>·</span>
