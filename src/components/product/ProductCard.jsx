@@ -39,7 +39,7 @@ export default function ProductCard({ product, view = 'grid' }) {
   if (view === 'list') return (
     <article className="card flex flex-row gap-4 p-4">
       <Link to={`/product/${product.slug}`} className="w-28 h-28 flex-shrink-0 overflow-hidden rounded-lg bg-gray-50">
-        <img src={product.images?.[0]?.url || '/placeholder-product.jpg'} alt={product.name} loading="lazy" className="w-full h-full object-cover" />
+        <img src={product.images?.[0]?.url || '/placeholder-product.jpg'} alt={product.name} loading="eager" className="w-full h-full object-cover" />
       </Link>
       <div className="flex-1 flex flex-col justify-between gap-2">
         <div>
@@ -76,7 +76,7 @@ export default function ProductCard({ product, view = 'grid' }) {
       {discount >= 5 && <span className="absolute top-3 left-3 z-10 badge-red text-[10px] font-bold px-2 py-0.5">-{discount}%</span>}
       {product.stock === 0 && <span className="absolute top-3 left-3 z-10 badge text-[10px] font-bold px-2 py-0.5 bg-gray-100 text-gray-500">Out of Stock</span>}
       <Link to={`/product/${product.slug}`} className="block overflow-hidden bg-gray-50 aspect-square">
-        <img src={product.images?.[0]?.url || '/placeholder-product.jpg'} alt={product.name} loading="lazy"
+        <img src={product.images?.[0]?.url || '/placeholder-product.jpg'} alt={product.name} loading="eager"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
       </Link>
       <div className="p-4 flex flex-col flex-1 gap-2">
