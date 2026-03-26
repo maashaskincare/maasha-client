@@ -66,7 +66,7 @@ export default function Home() {
       <section className="relative overflow-hidden" style={{minHeight:'clamp(380px, 55vw, 600px)'}}>
         {banners.length > 0 ? (
           <div className="absolute inset-0">
-            <img src={banners[heroBanner]?.image} alt={banners[heroBanner]?.title||'Maasha Skin Care'} className="w-full h-full object-cover" loading="eager"/>
+            <img src={banners[heroBanner]?.image?.url} alt={banners[heroBanner]?.title||'Maasha Skin Care'} className="w-full h-full object-cover" loading="eager"/>
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"/>
           </div>
         ) : (
