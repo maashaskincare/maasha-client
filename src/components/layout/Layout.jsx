@@ -22,8 +22,6 @@ export default function Layout() {
       </main>
       <Footer />
       
-      {/* Floating WhatsApp Button */}
-      
         href="https://wa.me/919244142410"
         target="_blank"
         rel="noopener noreferrer"
