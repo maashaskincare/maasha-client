@@ -54,10 +54,7 @@ export default function Navbar() {
         <div className="container-site">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="flex flex-col leading-none">
-                <span className="text-xl md:text-2xl font-bold tracking-wide" style={{fontFamily:'var(--font-heading)',color:'var(--color-primary)'}}>MAASHA</span>
-                <span className="text-[9px] tracking-[0.3em] font-medium -mt-0.5" style={{color:'var(--color-gold)'}}>SKIN CARE</span>
-              </div>
+              <img src="/logo-navbar.png" alt="Maasha Skin Care" className="h-7 md:h-8 w-auto" />
             </Link>
 
             <nav className="hidden md:flex items-center gap-1">

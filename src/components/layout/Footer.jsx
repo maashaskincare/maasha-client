@@ -10,8 +10,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
               <div className="mb-4">
-                <p className="text-2xl font-bold tracking-wide" style={{fontFamily:'var(--font-heading)',color:'var(--color-gold)'}}>MAASHA</p>
-                <p className="text-[9px] tracking-[0.3em] font-medium text-white/50 -mt-0.5">SKIN CARE</p>
+                <img src="/logo-footer.png" alt="Maasha Skin Care" className="h-10 w-auto [filter:invert(1)]" />
               </div>
               <p className="text-sm text-white/60 leading-relaxed mb-5 max-w-xs">
                 Science-backed, affordable skincare with natural active ingredients. Crafted for Indian skin, shipped pan-India from Bhopal.
