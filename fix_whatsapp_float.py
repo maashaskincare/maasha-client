@@ -1,27 +1,9 @@
-import { Outlet } from 'react-router-dom'
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { loadUser } from '../../features/auth/authSlice'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import AnnouncementBar from './AnnouncementBar'
+with open('src/components/layout/Layout.jsx', 'r') as f:
+    content = f.read()
 
-export default function Layout() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    const token = localStorage.getItem('maasha_token')
-    if (token) dispatch(loadUser())
-  }, [dispatch])
-
-  return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <AnnouncementBar />
-      <Navbar />
-      <main className="flex-1 page-enter">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+# Add floating WhatsApp button before closing div
+old = "    </div>\n  )\n}"
+new = """    </div>
     {/* Floating WhatsApp Button */}
     
       href="https://wa.me/919244142410"
@@ -38,4 +20,10 @@ export default function Layout() {
     </a>
   </div>
   )
-}
+}"""
+
+content = content.replace(old, new)
+
+with open('src/components/layout/Layout.jsx', 'w') as f:
+    f.write(content)
+print("Done!")

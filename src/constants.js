@@ -5,7 +5,7 @@ export const BRAND = {
   tagline:  'Reveal Your Natural Radiance',
   business: 'Beauty Secret',
   address:  '30, Patarkaar Colony, Link Road No. 3, Bhopal, MP – 462003',
-  phone:    ['+91 9646233903', '+91 6260214325'],
+  phone:    ['+91 9244142410'],
   email:    'maashaskincare@gmail.com',
   website:  'https://maasha-client.onrender.com',
 }

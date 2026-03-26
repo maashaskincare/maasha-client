@@ -14,7 +14,7 @@ export default function Terms() {
             {id:'shipping', title:'3. Shipping Policy',   body:'We ship pan-India from Bhopal, MP. Orders are processed within 1–2 business days. Standard delivery takes 3–7 working days. Free shipping on orders above ₹499. A shipping charge of ₹60 applies to orders below ₹499.'},
             {id:'returns',  title:'4. Returns & Refunds', body:'We accept returns within 7 days of delivery for damaged, defective, or incorrect products. Products must be unused and in original packaging. Email maashaskincare@gmail.com with your order number and photo evidence. Refunds are processed within 5–7 business days.'},
             {id:'payment',  title:'5. Payment',           body:'We accept UPI, credit/debit cards, net banking, wallets, and Cash on Delivery via Razorpay. All transactions are encrypted and PCI-DSS compliant. We do not store your payment details.'},
-            {id:'contact',  title:'6. Contact',           body:'For any queries, contact us at maashaskincare@gmail.com or call +91 9646233903 (Mon–Sat, 10 AM–7 PM).'},
+            {id:'contact',  title:'6. Contact',           body:'For any queries, contact us at maashaskincare@gmail.com or call +91 9244142410 (Mon–Sat, 10 AM–7 PM).'},
           ].map(s => (
             <div key={s.id} id={s.id}>
               <h2 className="text-base font-bold text-charcoal mb-2" style={{fontFamily:'var(--font-heading)'}}>{s.title}</h2>

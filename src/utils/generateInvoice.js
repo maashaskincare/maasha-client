@@ -54,7 +54,7 @@ export default function generateInvoice(order) {
   doc.setFontSize(8)
   doc.text('30, Patarkaar Colony, Link Road No. 3', 15, y + 6)
   doc.text('Bhopal, MP – 462003, India', 15, y + 12)
-  doc.text('Phone: +91 9646233903', 15, y + 18)
+  doc.text('Phone: +91 9244142410', 15, y + 18)
   doc.text('Email: maashaskincare@gmail.com', 15, y + 24)
 
   doc.setFont('helvetica', 'bold')
@@ -182,7 +182,7 @@ export default function generateInvoice(order) {
   doc.setFont('helvetica', 'normal')
   doc.setTextColor(...GRAY)
   doc.setFontSize(8)
-  doc.text('For queries: maashaskincare@gmail.com | +91 9646233903', pageW / 2, noteY + 14, { align: 'center' })
+  doc.text('For queries: maashaskincare@gmail.com | +91 9244142410', pageW / 2, noteY + 14, { align: 'center' })
 
   const footerY = doc.internal.pageSize.getHeight() - 12
   doc.setDrawColor(...LGRAY)
