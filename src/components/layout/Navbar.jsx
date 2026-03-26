@@ -57,7 +57,7 @@ export default function Navbar() {
               <img 
                 src="/logo-header.png" 
                 alt="Maasha Skin Care" 
-                style={{ height: '40px', width: 'auto', maxHeight: '40px' }}
+                style={{ height: '32px', width: 'auto' }}
               />
             </Link>
 

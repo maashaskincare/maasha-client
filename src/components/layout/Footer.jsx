@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="container-site py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
-              <div className="mb-4 bg-white inline-block p-2 rounded-lg">
+              <div className="mb-6 bg-white inline-block px-3 py-2 rounded-lg shadow-sm">
                 <img 
                   src="/logo-footer.png" 
                   alt="Maasha Skin Care" 
