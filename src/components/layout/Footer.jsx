@@ -4,7 +4,7 @@ import { BRAND, NAV_LINKS } from '../../constants'
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-[#1a1a1a] text-white">
+    <footer className="bg-[#1a1a1a] text-white pt-8">
       <div className="border-b border-white/10">
         <div className="container-site py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
