@@ -4,13 +4,17 @@ import { BRAND, NAV_LINKS } from '../../constants'
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-charcoal text-white">
+    <footer className="bg-[#1a1a1a] text-white">
       <div className="border-b border-white/10">
         <div className="container-site py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
-              <div className="mb-4">
-                <img src="/logo-footer.png" alt="Maasha Skin Care" className="h-10 w-auto [filter:invert(1)]" />
+              <div className="mb-4 bg-white inline-block p-2 rounded-lg">
+                <img 
+                  src="/logo-footer.png" 
+                  alt="Maasha Skin Care" 
+                  className="h-8 sm:h-9 w-auto object-contain"
+                />
               </div>
               <p className="text-sm text-white/60 leading-relaxed mb-5 max-w-xs">
                 Science-backed, affordable skincare with natural active ingredients. Crafted for Indian skin, shipped pan-India from Bhopal.

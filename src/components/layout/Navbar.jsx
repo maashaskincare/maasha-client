@@ -53,8 +53,12 @@ export default function Navbar() {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-nav border-b border-gray-100' : 'bg-white/95 backdrop-blur-sm'}`}>
         <div className="container-site">
           <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-              <img src="/logo-navbar.png" alt="Maasha Skin Care" className="h-7 md:h-8 w-auto" />
+            <Link to="/" className="flex items-center flex-shrink-0 py-2">
+              <img 
+                src="/logo-header.png" 
+                alt="Maasha Skin Care" 
+                style={{ height: '40px', width: 'auto', maxHeight: '40px' }}
+              />
             </Link>
 
             <nav className="hidden md:flex items-center gap-1">
