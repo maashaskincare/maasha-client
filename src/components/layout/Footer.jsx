@@ -77,7 +77,7 @@ export default function Footer() {
             <div>
               <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact Us</h3>
               <address className="not-italic space-y-3">
-                <p className="text-sm text-white/60 leading-relaxed">30, Patarkaar Colony,<br />Link Road No. 3,<br />Bhopal, MP – 462003</p>
+                <p className="text-sm text-white/60 leading-relaxed">Maasha Skin Care, Kara Unisex Salon,<br />335 Mandakini, Kolar Road,<br />Near Rudraksha Hospital,<br />Bhopal, MP – 462042</p>
                 <div className="space-y-0.5">
                   {BRAND.phone.map(p => (
                     <a key={p} href={`tel:${p.replace(/\s/g,'')}`} className="block text-sm text-white/60 hover:text-white transition-colors">{p}</a>

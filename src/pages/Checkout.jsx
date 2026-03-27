@@ -167,7 +167,6 @@ export default function Checkout() {
                   <div className="space-y-3">
                     {[
                       {value:'razorpay',label:'Pay Online',desc:'UPI, Cards, Net Banking, Wallets',icon:'💳'},
-                      {value:'cod',label:'Cash on Delivery',desc:'Pay when your order arrives',icon:'💵'},
                     ].map(m => (
                       <label key={m.value} className={`flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all ${payMethod===m.value?'border-green-500 bg-green-50':'border-gray-200 hover:border-gray-300'}`}>
                         <input type="radio" name="payment" value={m.value} checked={payMethod===m.value} onChange={() => setPayMethod(m.value)} className="accent-green-500"/>

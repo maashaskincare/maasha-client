@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
             {title:'3. Data Security',body:'We implement industry-standard security measures to protect your personal information. All payment transactions are processed through Razorpay\'s secure PCI-compliant platform. Our website uses SSL encryption to protect data in transit.'},
             {title:'4. Cookies',body:'We use cookies and similar tracking technologies to improve your browsing experience, remember your preferences, and analyse site traffic. You can control cookies through your browser settings.'},
             {title:'5. Your Rights',body:'You have the right to access, correct, or delete your personal information. You can update your profile in your account settings, or contact us at maashaskincare@gmail.com to request data deletion.'},
-            {title:'6. Contact',body:'For privacy-related queries, contact us at maashaskincare@gmail.com or write to: Beauty Secret, 30 Patarkaar Colony, Link Road No. 3, Bhopal, MP – 462003.'},
+            {title:'6. Contact',body:'For privacy-related queries, contact us at maashaskincare@gmail.com or write to: Beauty Secret, 30 Patarkaar Colony, Link Road No. 3, Near Rudraksha Hospital, Bhopal, MP – 462042.'},
           ].map(s => (
             <div key={s.title}>
               <h2 className="text-base font-bold text-charcoal mb-2" style={{fontFamily:'var(--font-heading)'}}>{s.title}</h2>

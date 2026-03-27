@@ -88,7 +88,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link to="/shop" className="btn-gold px-8 py-3.5 text-sm font-bold shadow-lg">Shop Now →</Link>
-              <Link to="/skin-quiz" className="px-8 py-3.5 text-sm font-semibold rounded-lg transition-all border-2 border-white/40 text-white hover:bg-white hover:text-green-700">Take Skin Quiz</Link>
+              <Link to="/skin-quiz" className="px-8 py-3.5 text-sm font-semibold rounded-lg transition-all border-2 border-white/40 text-white hover:bg-white hover:text-green-700">Know Your Skin</Link>
             </div>
           </div>
         </div>
@@ -182,14 +182,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skin Quiz CTA */}
+      {/* Know Your Skin CTA */}
       <section className="section-py" style={{background:'linear-gradient(135deg, #f9f9f9 0%, #f0f7ef 100%)'}}>
         <div className="container-site">
           <div className="max-w-2xl mx-auto text-center">
             <span className="inline-block text-2xl mb-4">🧬</span>
             <h2 className="section-heading mb-3">Not Sure What Your Skin Needs?</h2>
-            <p className="text-gray-500 text-base mb-8 leading-relaxed">Take our free 60-second skin quiz and get personalised product recommendations tailored to your skin type, concerns, and goals.</p>
-            <Link to="/skin-quiz" className="btn-primary px-10 py-4 text-sm font-bold shadow-lg">Start Free Skin Quiz →</Link>
+            <p className="text-gray-500 text-base mb-8 leading-relaxed">Take our free 60-second Know Your Skin and get personalised product recommendations tailored to your skin type, concerns, and goals.</p>
+            <Link to="/skin-quiz" className="btn-primary px-10 py-4 text-sm font-bold shadow-lg">Know Your Skin Free →</Link>
             <p className="text-xs text-gray-400 mt-3">Takes less than 60 seconds · Free · No sign-up required</p>
           </div>
         </div>

@@ -24,8 +24,8 @@ const RECOMMENDATIONS = {
 }
 
 const quizFaqs = [
-  { question:'How accurate is the Maasha Skin Care Skin Quiz?', answer:'Our quiz is based on common skin type indicators and concerns. While it gives a great starting point, we recommend doing a patch test before trying any new product.' },
-  { question:'Can I retake the skin quiz?', answer:'Yes! Your skin can change with seasons, diet, and age. We recommend taking the quiz every 3–6 months for updated recommendations.' },
+  { question:'How accurate is the Maasha Skin Care Know Your Skin?', answer:'Our quiz is based on common skin type indicators and concerns. While it gives a great starting point, we recommend doing a patch test before trying any new product.' },
+  { question:'Can I retake the Know Your Skin?', answer:'Yes! Your skin can change with seasons, diet, and age. We recommend taking the quiz every 3–6 months for updated recommendations.' },
   { question:'Are the recommended products suitable for sensitive skin?', answer:'All Maasha Skin Care products are dermatologist-tested. However, we recommend doing a patch test if you have highly sensitive skin.' },
 ]
 
@@ -52,8 +52,8 @@ export default function SkinQuiz() {
   return (
     <>
       <SEO
-        title="Free Skin Quiz — Find Your Perfect Skincare Routine"
-        description="Take our free 60-second skin quiz to discover your skin type and get personalised product recommendations from Maasha Skin Care."
+        title="Know Your Skin Free — Find Your Perfect Skincare Routine"
+        description="Take our free 60-second Know Your Skin to discover your skin type and get personalised product recommendations from Maasha Skin Care."
         keywords="skin type quiz india, free skin quiz, what skin type am i, best skincare routine for my skin india"
         canonical="/skin-quiz"
         schema={faqSchema(quizFaqs)}
@@ -64,12 +64,12 @@ export default function SkinQuiz() {
           {step === 'start' && (
             <div className="text-center animate-fade-in">
               <div className="text-6xl mb-6">🧬</div>
-              <h1 className="section-heading mb-4">Free Skin Quiz</h1>
+              <h1 className="section-heading mb-4">Know Your Skin Free</h1>
               <p className="text-gray-500 mb-3 text-base leading-relaxed">Answer 5 quick questions and get personalised product recommendations crafted specifically for your skin type, concerns, and goals.</p>
               <div className="flex flex-wrap justify-center gap-4 mb-8 text-sm text-gray-400">
                 <span>⏱️ 60 seconds</span><span>🆓 Free</span><span>📧 No sign-up needed</span>
               </div>
-              <button onClick={() => setStep('quiz')} className="btn-primary px-12 py-4 text-base font-bold shadow-lg">Start My Skin Quiz →</button>
+              <button onClick={() => setStep('quiz')} className="btn-primary px-12 py-4 text-base font-bold shadow-lg">Start My KYS →</button>
             </div>
           )}
 

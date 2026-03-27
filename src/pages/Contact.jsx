@@ -72,7 +72,7 @@ export default function Contact() {
               <h3 className="font-bold text-charcoal mb-4" style={{fontFamily:'var(--font-heading)'}}>Our Office</h3>
               <address className="not-italic space-y-3 text-sm text-gray-600">
                 <p className="font-semibold text-charcoal">Beauty Secret</p>
-                <p>30, Patarkaar Colony,<br />Link Road No. 3,<br />Bhopal, MP – 462003, India</p>
+                <p>Maasha Skin Care, Kara Unisex Salon,<br />335 Mandakini, Kolar Road,<br />Near Rudraksha Hospital,<br />Bhopal, MP – 462042, India</p>
                 <div className="pt-2 space-y-2">
                   {BRAND.phone.map(p => (
                     <a key={p} href={`tel:${p.replace(/\s/g,'')}`} className="flex items-center gap-2 hover:text-green-600 transition-colors">📞 <span>{p}</span></a>

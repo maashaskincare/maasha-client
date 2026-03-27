@@ -4,7 +4,7 @@ export const BRAND = {
   name:     'Maasha Skin Care',
   tagline:  'Reveal Your Natural Radiance',
   business: 'Beauty Secret',
-  address:  '30, Patarkaar Colony, Link Road No. 3, Bhopal, MP – 462003',
+  address:  'Maasha Skin Care, Kara Unisex Salon, 335 Mandakini, Kolar Road, near Rudraksha Hospital, Bhopal, MP – 462042',
   phone:    ['+91 9244142410'],
   email:    'maashaskincare@gmail.com',
   website:  'https://maasha-client.onrender.com',
@@ -23,7 +23,7 @@ export const SEO_DEFAULTS = {
 export const NAV_LINKS = [
   { label: 'Shop',      href: '/shop' },
   { label: 'Blog',      href: '/blog' },
-  { label: 'Skin Quiz', href: '/skin-quiz' },
+  { label: 'KYS', href: '/skin-quiz' },
   { label: 'About',     href: '/about' },
   { label: 'Contact',   href: '/contact' },
 ]

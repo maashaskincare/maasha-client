@@ -37,7 +37,7 @@ export function organizationSchema() {
     name: 'Maasha Skin Care', alternateName: 'Beauty Secret',
     description: 'Science-backed skincare with natural active ingredients for Indian skin',
     url: BRAND.website, telephone: BRAND.phone[0], email: BRAND.email,
-    address: { '@type': 'PostalAddress', streetAddress: '30, Patarkaar Colony, Link Road No. 3', addressLocality: 'Bhopal', addressRegion: 'Madhya Pradesh', postalCode: '462003', addressCountry: 'IN' },
+    address: { '@type': 'PostalAddress', streetAddress: 'Kara Unisex Salon, 335 Mandakini, Kolar Road', addressLocality: 'Bhopal', addressRegion: 'Madhya Pradesh', postalCode: '462042', addressCountry: 'IN' },
     geo: { '@type': 'GeoCoordinates', latitude: 23.2599, longitude: 77.4126 },
     areaServed: 'IN', priceRange: '₹₹',
   }

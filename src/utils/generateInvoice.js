@@ -52,8 +52,8 @@ export default function generateInvoice(order) {
   doc.setFont('helvetica', 'normal')
   doc.setTextColor(...GRAY)
   doc.setFontSize(8)
-  doc.text('30, Patarkaar Colony, Link Road No. 3', 15, y + 6)
-  doc.text('Bhopal, MP – 462003, India', 15, y + 12)
+  doc.text('Kara Unisex Salon, 335 Mandakini, Kolar Road', 15, y + 6)
+  doc.text('Near Rudraksha Hospital, Bhopal, MP – 462042, India', 15, y + 12)
   doc.text('Phone: +91 9244142410', 15, y + 18)
   doc.text('Email: maashaskincare@gmail.com', 15, y + 24)
 
@@ -191,7 +191,7 @@ export default function generateInvoice(order) {
   doc.setFont('helvetica', 'normal')
   doc.setTextColor(...GRAY)
   doc.setFontSize(7)
-  doc.text('Maasha Skin Care | Beauty Secret | 30, Patarkaar Colony, Bhopal, MP – 462003', pageW / 2, footerY, { align: 'center' })
+  doc.text('Maasha Skin Care | Beauty Secret | 30, Patarkaar Colony, Near Rudraksha Hospital, Bhopal, MP – 462042', pageW / 2, footerY, { align: 'center' })
   doc.text(`Invoice generated on ${new Date().toLocaleDateString('en-IN')}`, pageW / 2, footerY + 5, { align: 'center' })
 
   const fileName = `Maasha-Invoice-${order.orderNumber || order._id?.slice(-6)}.pdf`
